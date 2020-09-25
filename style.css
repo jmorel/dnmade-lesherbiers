@@ -64,7 +64,7 @@ body {
 
 .yellow .anchor {
     position: absolute;
-    top: calc(-2*176px);
+    top: -176px;
     left: 0;
 }
 
@@ -87,8 +87,12 @@ h1 div::after {
 }
 
 header.yellow {
-    margin-top: 176px;
+    margin-top: 0;
+    padding-top: 100px;
     margin-bottom: 176px;
+}
+header.yellow::before {
+    display: none;
 }
 
 header dl {
