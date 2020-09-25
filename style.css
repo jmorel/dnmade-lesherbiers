@@ -1,0 +1,281 @@
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: GlacialIndifferenceRegular;
+    margin: 0;
+    color: #333333;
+    overflow-x: hidden;
+}
+
+.yellow {
+    position: relative;
+    background-color: yellow;
+    width: 1100px;
+    margin: calc(176px * 2) 0;
+}
+
+.yellow--left {
+    padding-left: 150px;
+    padding-right: 95px;
+}
+
+.yellow--right {
+    padding-right: 150px;
+    padding-left: 95px;
+    margin-left: auto;
+    text-align: right;
+}
+
+.yellow::before,
+.yellow::after {
+    position: absolute;
+    display: block;
+    content: '';
+    height: 176px;
+    width: 1100px;
+    border-style: solid;
+    border-width: 88px 550px;
+}
+
+.yellow--left::before {
+    left:0;
+    top: -176px;
+    border-color: transparent transparent yellow yellow;
+}
+
+.yellow--right::before {
+    right: 0;
+    top: -176px;
+    border-color: transparent yellow yellow transparent;
+}
+
+.yellow--left::after {
+    left: 0;
+    top: 100%;
+    border-color: yellow transparent transparent yellow;
+}
+.yellow--right::after {
+    right: 0;
+    top: 100%;
+    border-color: yellow yellow transparent transparent;
+}
+
+h1 {
+    font-family: GlacialIndifferenceBold;
+    text-transform: uppercase;
+    font-size: 66px;
+    margin: 0;
+}
+
+h1 div:first-child {
+    text-transform: none;
+    font-size: 100px;
+    line-height: 1;
+}
+
+h1 div::after {
+    content: '\A';
+    display: block;
+}
+
+header.yellow {
+    margin-top: 176px;
+    margin-bottom: 176px;
+}
+
+header dl {
+    text-transform: uppercase;
+    margin-top: 50px;
+    margin-bottom: 0;
+    font-size: 30px;
+}
+
+header dt {
+    display: inline-block;
+    width: 150px;
+}
+
+header dd {
+    font-family: GlacialIndifferenceBold;
+    display: inline;
+    margin-inline-start: 0;
+}
+header dd::after {
+    content: '\A';
+    display: block;
+}
+
+@keyframes ticker-frames {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(-100%, 0);
+    }
+}
+
+.ticker {
+    position: relative;
+    font-size: 20px;
+    font-family: GlacialIndifferenceBold;
+    transform: rotate(-9deg);
+    transform-origin: left top;
+}
+
+.ticker div {
+    /* display: inline-block; */
+    margin: 0 auto;
+    white-space: nowrap;
+    /* overflow: hidden; */
+    position: absolute;
+}
+
+.ticker span {
+    display: inline-block;
+}
+
+.ticker div:first-child span {
+    animation: ticker-frames 12.5s linear 1 forwards;
+}
+
+.ticker div:nth-child(2) span {
+    animation: ticker-frames 25s linear infinite;
+    padding-left: 100%;
+}
+
+.ticker div:last-child span {
+    padding-left: 100%;
+    animation: ticker-frames 25s linear infinite;
+    animation-delay: 12.5s;
+}
+
+
+h2 {
+    font-family: GlacialIndifferenceBold;
+    font-size: 30px;
+    text-transform: uppercase;
+    margin: 0 0;
+    transform: translateY(-100%)
+}
+
+p {
+    text-align: justify;
+    font-family: Inconsolata;
+    font-size: 20px;
+}
+
+.yellow p:last-child {
+    padding-bottom: 70px;
+}
+
+a {
+    color: inherit;
+    display: inline-block;
+    text-decoration: none;
+    background-image: linear-gradient(yellow, yellow);
+    background-size: 100% 10px;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    transition: background-size 200ms ease;
+}
+
+.yellow a {
+    background-image: linear-gradient(white, white);
+}
+
+a:hover {
+    background-size: 100% 100%;
+}
+
+footer {
+    padding: 0 150px 100px 150px;
+
+}
+footer p {
+    margin: 50px 0;
+    clear: both;
+}
+
+footer p:first-child {
+    width: 570px;
+}
+
+footer img {
+    float: right;
+    margin-top: -40px;
+    margin-bottom: 50px;
+}
+
+footer a {
+    font-family: GlacialIndifferenceBold;
+    font-size: 30px;
+}
+
+.map {
+    position: relative;
+    padding: 70px 0;
+}
+
+.legend {
+    position: absolute;
+    font-family: Inconsolata;
+    font-weight: bold;
+    font-size: 20px;
+    z-index: 10;
+}
+
+.legend--digital {
+    top: 10%;
+    left: 17%;
+}
+
+.legend--meeting-room {
+    top: 25%;
+    left: 30%;
+}
+.legend--library {
+    top: 10%;
+    left: 53%;
+}
+
+.legend--workshop {
+    top: 85%;
+    left: 9%;
+}
+.legend--lecture {
+    top: 85%;
+    left: 59%;
+}
+
+.legend ul {
+    font-weight: normal;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    list-style-type: '- ';
+    list-style-position: inside;
+}
+
+aside {
+    font-size: 30px;
+    position: sticky;
+    top: 50px;
+    left: 95px;
+}
+
+aside ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+aside li {
+    margin: 10px 0;
+}
+
+aside .active {
+    font-family: GlacialIndifferenceBold;
+}
