@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/glacial-indifference" type="text/css" />
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/inconsolata" type="text/css" />
+    <link rel="stylesheet" href="normalize.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header>
+        <h1>
+            <div>DNMADe</div>
+            les herbiers
+        </h1>
+        <dl>
+            <dt>Mention</dt>
+            <dd>Objet</dd>
+            <dt>Mineure</dt>
+            <dd>Materiau</dd>
+        </dl>
+        <ul class="menu">
+            {% for section in sections %}
+            {% if section.name %}
+            <li>
+                <a href="#{{ section.name }}">{{ section.title }}</a>
+            </li>
+            {% endif %}
+            {% endfor %}
+        </ul>
+    </header>
+
+    <section class="ticker">
+        {% for _ in range(3) %}
+        <div>
+            <span>
+            {% for material in materials %}
+                • {{ material }}
+            {%- endfor %}&nbsp;
+            </span>
+        </div>
+        {% endfor %}
+    </section>
+
+    {% for section in sections %}
+        <section class="{{ section.type}} {{ section.type }}--{{ section.position }}">
+            {% if section.type == "yellow" %}
+            <span class="anchor"  id="{{ section.name }}"></span>
+            <h2>{{ section.title }}</h2>
+            {% include section.template  %}
+            {% endif %}
+
+            {% if section.type == "picture" %}
+                <img src="{{ section.src}}" >
+                <p>{{ section.caption }}</p>
+            {% endif %}
+        </section>
+    {% endfor %}
+
+    <footer>
+        <p>
+            <img src="logo-jean-monnet.jpg">
+            <a href="https://jean-monnet.paysdelaloire.e-lyco.fr/">Lycée Jean Monnet</a><br>
+            57 rue de la demoiselle,<br>
+            85500 Les herbiers<br>
+            02 51 64 80 00<br>
+        </p>
+        <p>
+            <a href="https://designetmetiersdart.fr/">Site national Design & Métiers d'Art</a>
+        </p>
+        <p>
+            <a href="">Mentions légales</a>
+        </p>
+    </footer>
+</body>
+
+</html>

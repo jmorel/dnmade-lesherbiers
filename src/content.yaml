@@ -1,0 +1,41 @@
+sections:
+    - name: formation
+      template: formation.html
+      title: La formation
+      type: yellow
+      position: right
+    - name: ressources
+      template: ressources.html
+      title: Ressources
+      type: yellow
+      position: left
+    - name: admissions
+      template: admissions.html
+      title: Admissions
+      type: yellow
+      position: right
+    - type: picture
+      src: neslihan-gunaydin-Ts0830UlVOM-unsplash.jpg
+      caption: Lorem ipsum dolor sit amet
+      position: left
+
+materials:
+    - bois
+    - métal
+    - verre
+    - céramique
+    - carton
+    - papier
+    - lorem
+    - ipsum
+    - dolor
+    - sit
+    - amet
+    - consectetur
+    - adipiscing
+    - elit
+    - sed
+    - do
+    - eiusmod
+    - tempor
+    - incididunt ut labore et dolore magna aliqua&nbsp;

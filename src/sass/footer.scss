@@ -1,0 +1,25 @@
+@use 'variables' as *;
+
+footer {
+    padding: 0 150px 100px 150px;
+
+    p {
+        margin: 50px 0;
+        clear: both;
+
+        &:first-child {
+            width: 570px;
+        }
+    }
+
+    img {
+        float: right;
+        margin-top: -40px;
+        margin-bottom: 50px;
+    }
+
+    a {
+        font-family: $font-family-header-bold;
+        font-size: $font-size-large;
+    }
+}

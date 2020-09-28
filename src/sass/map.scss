@@ -1,0 +1,45 @@
+
+.map {
+    position: relative;
+    padding: 70px 0;
+}
+
+.legend {
+    position: absolute;
+    font-family: Inconsolata;
+    font-weight: bold;
+    font-size: 20px;
+    z-index: 10;
+}
+
+.legend--digital {
+    top: 57px;
+    left: 145px;
+}
+
+.legend--meeting-room {
+    top: 145px;
+    left: 252px;
+}
+.legend--library {
+    top: 59px;
+    left: 451px;
+}
+
+.legend--workshop {
+    top: 497px;
+    left: 77px;
+}
+.legend--lecture {
+    top: 496px;
+    left: 504px;
+}
+
+.legend ul {
+    font-weight: normal;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    list-style-type: '- ';
+    list-style-position: inside;
+}
