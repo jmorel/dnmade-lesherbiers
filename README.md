@@ -19,6 +19,9 @@ make dev
 
 ## Déploiement
 
+Le site se déploie tout seul sur GitHub pages grâce à Travis CI à chaque nouveau commit sur la branche `main`.
+
+Pour déployer sur un autre serveur via SCP, il suffit de build le site et de copier les fichiers:
 ```
 make build
 scp _build/* <serveur>:<path>
