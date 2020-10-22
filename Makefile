@@ -6,6 +6,7 @@ build:
 	sass src/sass/index.scss _build/style.css
 	cp src/css/normalize.css _build/normalize.css
 	cp src/img/* _build/
+	cp CNAME _build/
 	python scripts/templatize.py
 
 clean:
