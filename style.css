@@ -1,0 +1,294 @@
+@charset "UTF-8";
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Inconsolata;
+  font-size: 20px;
+  margin: 0;
+  color: #333333;
+  overflow-x: hidden;
+}
+
+h2 {
+  font-family: Inconsolata;
+  font-size: 30px;
+  text-transform: uppercase;
+  margin: 0 0;
+  margin-top: -100px;
+  margin-bottom: 70px;
+}
+
+p {
+  text-align: justify;
+  margin-top: 0;
+}
+p:last-child {
+  margin-bottom: 0;
+}
+
+a {
+  color: inherit;
+  display: inline-block;
+  text-decoration: none;
+  background-image: linear-gradient(yellow, yellow);
+  background-size: 100% 10px;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  transition: background-size 200ms ease;
+}
+a:hover {
+  background-size: 100% 100%;
+}
+
+header {
+  position: relative;
+  width: 1100px;
+  padding: 100px 150px 0 150px;
+  margin-bottom: 176px;
+  background: yellow;
+}
+header::after {
+  position: absolute;
+  display: block;
+  content: "";
+  z-index: -1;
+  height: 176px;
+  width: 1100px;
+  border-style: solid;
+  border-width: 88px 550px;
+  top: 100%;
+  left: 0;
+  border-color: yellow transparent transparent yellow;
+}
+header h1 {
+  font-family: GlacialIndifferenceBold;
+  text-transform: uppercase;
+  font-size: 66px;
+  margin: 0;
+}
+header div:first-child {
+  text-transform: none;
+  font-size: 100px;
+  line-height: 1;
+}
+header div::after {
+  content: "\a";
+  display: block;
+}
+header dl {
+  text-transform: uppercase;
+  margin-top: 50px;
+  margin-bottom: 0;
+  font-size: 30px;
+}
+header dt {
+  display: inline-block;
+  width: 150px;
+}
+header dd {
+  font-family: GlacialIndifferenceBold;
+  display: inline;
+  margin-inline-start: 0;
+}
+header dd::after {
+  content: "\a";
+  display: block;
+}
+header .menu {
+  margin: 50px 0 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  font-size: 20px;
+}
+header .menu li {
+  margin: 0;
+}
+header .menu li::after {
+  content: "•";
+  display: inline-block;
+  margin-left: -5px;
+  margin-right: 5px;
+}
+header .menu li:last-child::after {
+  display: none;
+}
+header .menu a {
+  background-image: linear-gradient(white, white);
+}
+
+@keyframes ticker-frames {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-100%, 0);
+  }
+}
+.ticker {
+  position: relative;
+  font-family: GlacialIndifferenceBold;
+  transform: rotate(-9deg);
+  transform-origin: left top;
+}
+.ticker div {
+  margin: 0 auto;
+  white-space: nowrap;
+  position: absolute;
+}
+.ticker div span {
+  display: inline-block;
+}
+.ticker div:first-child span {
+  animation: ticker-frames 12.5s linear 1 forwards;
+}
+.ticker div:nth-child(2) span {
+  animation: ticker-frames 25s linear infinite;
+  padding-left: 100%;
+}
+.ticker div:last-child span {
+  padding-left: 100%;
+  animation: ticker-frames 25s linear infinite;
+  animation-delay: 12.5s;
+}
+
+section.yellow {
+  position: relative;
+  background-color: yellow;
+  width: 1100px;
+  margin: calc(176px * 2) 0;
+  padding: 70px 150px;
+}
+section.yellow.yellow--right {
+  margin-left: auto;
+  text-align: right;
+}
+section.yellow::before, section.yellow::after {
+  position: absolute;
+  display: block;
+  content: "";
+  z-index: -1;
+  height: 176px;
+  width: 1100px;
+  border-style: solid;
+  border-width: 88px 550px;
+}
+section.yellow.yellow--left::before {
+  left: 0;
+  top: -176px;
+  border-color: transparent transparent yellow yellow;
+}
+section.yellow.yellow--right::before {
+  right: 0;
+  top: -176px;
+  border-color: transparent yellow yellow transparent;
+}
+section.yellow.yellow--left::after {
+  left: 0;
+  top: 100%;
+  border-color: yellow transparent transparent yellow;
+}
+section.yellow.yellow--right::after {
+  right: 0;
+  top: 100%;
+  border-color: yellow yellow transparent transparent;
+}
+section.yellow .anchor {
+  position: absolute;
+  top: -176px;
+  left: 0;
+}
+section.yellow a {
+  background-image: linear-gradient(white, white);
+}
+
+section.picture {
+  margin-top: -176px;
+  position: relative;
+}
+section.picture img {
+  width: 1100px;
+  /* Works for a 3:2 ratio */
+  clip-path: polygon(0 0, 100% 176px, 100% 557px, 0 100%);
+}
+section.picture p {
+  background-color: yellow;
+  padding: 10px;
+  z-index: 1;
+  position: absolute;
+  bottom: 130px;
+  left: 150px;
+}
+
+.map {
+  position: relative;
+  padding: 70px 0;
+}
+
+.legend {
+  position: absolute;
+  font-family: Inconsolata;
+  font-weight: bold;
+  font-size: 20px;
+  z-index: 10;
+}
+
+.legend--digital {
+  top: 57px;
+  left: 145px;
+}
+
+.legend--meeting-room {
+  top: 145px;
+  left: 252px;
+}
+
+.legend--library {
+  top: 59px;
+  left: 451px;
+}
+
+.legend--workshop {
+  top: 497px;
+  left: 77px;
+}
+
+.legend--lecture {
+  top: 496px;
+  left: 504px;
+}
+
+.legend ul {
+  font-weight: normal;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  list-style-type: "- ";
+  list-style-position: inside;
+}
+
+footer {
+  padding: 0 150px 100px 150px;
+}
+footer p {
+  margin: 50px 0;
+  clear: both;
+}
+footer p:first-child {
+  width: 570px;
+}
+footer img {
+  float: right;
+  margin-top: -40px;
+  margin-bottom: 50px;
+}
+footer a {
+  font-family: GlacialIndifferenceBold;
+  font-size: 30px;
+}
+
+/*# sourceMappingURL=style.css.map */
